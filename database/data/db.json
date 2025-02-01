@@ -1,0 +1,337 @@
+{
+    "smartphones": [
+      {
+        "id": "1",
+        "nom": "iPhone 13",
+        "marque": "Apple",
+        "description": "Latest model of iPhone.",
+        "prix": 999.99,
+        "photo": "images/iphone-13-128-go.jpg",
+        "ram": "6",
+        "rom": "128",
+        "ecran": "6.1 inches",
+        "couleurs": [
+          "Black",
+          "White",
+          "Red"
+        ]
+      },
+      {
+        "id": "2",
+        "nom": "Samsung Galaxy S21",
+        "marque": "Samsung",
+        "description": "Flagship Samsung smartphone.",
+        "prix": 799.99,
+        "photo": "images/GALAXY-S21.jpeg",
+        "ram": "8",
+        "rom": "256",
+        "ecran": "6.2 inches",
+        "couleurs": [
+          "Phantom Gray",
+          "Phantom White"
+        ]
+      },
+      {
+        "id": "3",
+        "nom": "Google Pixel 6",
+        "marque": "Google",
+        "description": "Smartphone with pure Android experience.",
+        "prix": 599.99,
+        "photo": "images/Smartphone-Google-Pixel-6.jpg",
+        "ram": "8",
+        "rom": "128",
+        "ecran": "6.4 inches",
+        "couleurs": [
+          "Stormy Black",
+          "Sorta Seafoam"
+        ]
+      },
+      {
+        "id": "4",
+        "nom": "OnePlus 9",
+        "marque": "OnePlus",
+        "description": "High-performance smartphone with Hasselblad camera.",
+        "prix": 729.99,
+        "photo": "images/Smartphone-OnePlus-9.jpg",
+        "ram": "12",
+        "rom": "256",
+        "ecran": "6.55 inches",
+        "couleurs": [
+          "Winter Mist",
+          "Astral Black"
+        ]
+      },
+      {
+        "id": "5",
+        "nom": "Xiaomi Mi 11",
+        "marque": "Xiaomi",
+        "description": "Affordable flagship with great features.",
+        "prix": 699.99,
+        "photo": "images/Smartphone-Xiaomi-Mi-11-Lite.jpg",
+        "ram": "8",
+        "rom": "128",
+        "ecran": "6.81 inches",
+        "couleurs": [
+          "Horizon Blue",
+          "Midnight Gray"
+        ]
+      },
+      {
+        "id": "6",
+        "nom": "Sony Xperia 1 III",
+        "marque": "Sony",
+        "description": "Premium phone with advanced camera technology.",
+        "prix": 1199.99,
+        "photo": "images/sony-xperia-1-iii.png",
+        "ram": "12",
+        "rom": "256",
+        "ecran": "6.5 inches",
+        "couleurs": [
+          "Frosted Black",
+          "Frosted Purple"
+        ]
+      },
+      {
+        "id": "7",
+        "nom": "Huawei P50 Pro",
+        "marque": "Huawei",
+        "description": "Exceptional camera and design.",
+        "prix": 899.99,
+        "photo": "images/Smartphone-Huawei-P60-Pro-256-Go-Noir.jpg",
+        "ram": "8",
+        "rom": "512",
+        "ecran": "6.6 inches",
+        "couleurs": [
+          "Golden Black",
+          "Cocoa Gold"
+        ]
+      },
+      {
+        "id": "8",
+        "nom": "Oppo Find X3 Pro",
+        "marque": "Oppo",
+        "description": "Innovative camera design with a sleek build.",
+        "prix": 1149.99,
+        "photo": "images/Oppo-Find-X3-Pro-6-7-Double-SIM-256-Go-5G-Noir.jpg",
+        "ram": "12",
+        "rom": "256",
+        "ecran": "6.7 inches",
+        "couleurs": [
+          "Gloss Black",
+          "Blue"
+        ]
+      },
+      {
+        "id": "9",
+        "nom": "Asus ROG Phone 5",
+        "marque": "Asus",
+        "description": "Gaming phone with exceptional performance.",
+        "prix": 999.99,
+        "photo": "images/ASUS-ROG-Phone5.jpg",
+        "ram": "16",
+        "rom": "512",
+        "ecran": "6.78 inches",
+        "couleurs": [
+          "Phantom Black",
+          "Aurora White"
+        ]
+      },
+      {
+        "id": "10",
+        "nom": "Motorola Edge 20 Pro",
+        "marque": "Motorola",
+        "description": "Stylish phone with great display and performance.",
+        "prix": 699.99,
+        "photo": "images/Motorola-Edge-20-pro.png",
+        "ram": "8",
+        "rom": "256",
+        "ecran": "6.7 inches",
+        "couleurs": [
+          "Midnight Blue",
+          "Frosted White"
+        ]
+      },
+      {
+        "id": "12",
+        "nom": "Nokia XR20",
+        "marque": "Nokia",
+        "description": "Rugged phone for extreme conditions.",
+        "prix": 549.99,
+        "photo": "images/Nokia-XR20.jpg",
+        "ram": "6",
+        "rom": "128",
+        "ecran": "6.67 inches",
+        "couleurs": [
+          "Granite Gray",
+          "Ultra Blue"
+        ]
+      },
+      {
+        "id": "13",
+        "nom": "Vivo X60 Pro",
+        "marque": "Vivo",
+        "description": "High-end phone with Zeiss optics.",
+        "prix": 799.99,
+        "photo": "images/vivo-x60-pro-256-go.jpg",
+        "ram": "12",
+        "rom": "256",
+        "ecran": "6.56 inches",
+        "couleurs": [
+          "Shimmer Blue",
+          "Midnight Black"
+        ]
+      },
+      {
+        "id": "14",
+        "nom": "iPhone 12 Mini",
+        "marque": "Apple",
+        "description": "Compact iPhone with powerful performance.",
+        "prix": 699.99,
+        "photo": "images/Apple-iPhone-12-mini.jpg",
+        "ram": "4",
+        "rom": "64",
+        "ecran": "5.4 inches",
+        "couleurs": [
+          "Blue",
+          "Green",
+          "Purple"
+        ]
+      },
+      {
+        "id": "15",
+        "nom": "Samsung Galaxy Z Flip 3",
+        "marque": "Samsung",
+        "description": "Foldable smartphone with compact design.",
+        "prix": 999.99,
+        "photo": "images/Z-Flip-3-Lavender.png",
+        "ram": "8",
+        "rom": "128",
+        "ecran": "6.7 inches",
+        "couleurs": [
+          "Cream",
+          "Lavender",
+          "Phantom Black"
+        ]
+      },
+      {
+        "id": "16",
+        "nom": "Honor 50",
+        "marque": "Honor",
+        "description": "Stylish phone with Google services restored.",
+        "prix": 499.99,
+        "photo": "images/Honor50.png",
+        "ram": "6",
+        "rom": "128",
+        "ecran": "6.57 inches",
+        "couleurs": [
+          "Emerald Green",
+          "Midnight Black"
+        ]
+      },
+      {
+        "id": "17",
+        "nom": "Redmi Note 11 Pro",
+        "marque": "Xiaomi",
+        "description": "Mid-range phone with excellent value.",
+        "prix": 329.99,
+        "photo": "images/Redmi-Note-11-Pro.png",
+        "ram": "6",
+        "rom": "128",
+        "ecran": "6.67 inches",
+        "couleurs": [
+          "Polar White",
+          "Graphite Gray"
+        ]
+      },
+      {
+        "id": "18",
+        "nom": "Poco X3 Pro",
+        "marque": "Poco",
+        "description": "Budget phone with powerful performance.",
+        "prix": 299.99,
+        "photo": "images/Poco-X3-Pro.jpg",
+        "ram": "8",
+        "rom": "128",
+        "ecran": "6.67 inches",
+        "couleurs": [
+          "Phantom Black",
+          "Frost Blue"
+        ]
+      },
+      {
+        "id": "19",
+        "nom": "ZTE Axon 30 Ultra",
+        "marque": "ZTE",
+        "description": "Flagship with excellent camera system.",
+        "prix": 899.99,
+        "photo": "images/ZTEAxon30.jpg",
+        "ram": "12",
+        "rom": "256",
+        "ecran": "6.67 inches",
+        "couleurs": [
+          "Black",
+          "Gold"
+        ]
+      },
+      {
+        "id": "20",
+        "nom": "Lenovo Legion Duel 2",
+        "marque": "Lenovo",
+        "description": "Gaming phone with unique features.",
+        "prix": 999.99,
+        "photo": "images/legion_duel_2_4.jpg",
+        "ram": "16",
+        "rom": "512",
+        "ecran": "6.92 inches",
+        "couleurs": [
+          "Titanium White",
+          "Ultimate Black"
+        ]
+      },
+      {
+        "id": "21",
+        "nom": "Alcatel 1S",
+        "marque": "Alcatel",
+        "description": "Affordable smartphone for daily use.",
+        "prix": 149.99,
+        "photo": "images/alcatel1S.png",
+        "ram": "3",
+        "rom": "32",
+        "ecran": "6.52 inches",
+        "couleurs": [
+          "Power Gray",
+          "Agate Green"
+        ]
+      },
+      {
+        "id": "22",
+        "nom": "Fairphone 4",
+        "marque": "Fairphone",
+        "description": "Ethical smartphone with modular design.",
+        "prix": 579.99,
+        "photo": "images/Fairphone-4-Dual-SIM-256GB-ROM-8.jpeg",
+        "ram": "8",
+        "rom": "256",
+        "ecran": "6.3 inches",
+        "couleurs": [
+          "Gray",
+          "Green"
+        ]
+      },
+      {
+        "id": "23",
+        "nom": "Micromax IN Note 2",
+        "marque": "Micromax",
+        "description": "Indian-made budget smartphone.",
+        "prix": 199.99,
+        "photo": "images/in-note-2.jpeg",
+        "ram": "4",
+        "rom": "64",
+        "ecran": "6.43 inches",
+        "couleurs": [
+          "Brown",
+          "Black"
+        ]
+      }
+    ]
+}
