@@ -39,7 +39,15 @@ To get a local copy up and running, follow these simple steps.
     composer install
     npm install
     ```
-4. Modify the `.env` file for database connection
+
+4. Create a `.env` file
+
+5. Copy the `.env.exemple` into `.env`
+    ```
+    cp .env.exemple .env
+    ```
+
+6. Change the `.env` file for database connection section like this
     ```sh
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -49,23 +57,20 @@ To get a local copy up and running, follow these simple steps.
     DB_PASSWORD=
     DB_COLLATION=utf8mb4_unicode_ci
     ```
-5. Create the database on PhpMyAdmin
+7. Create the database on PhpMyAdmin
 
-6. Run migration
+8. Run migration
     ```sh
     php artisan migrate
     ```
 
-7. Seed the database with db.json file
+9. Seed the database with db.json file
     ```sh
     php artisan db:seed --class=SmartphoneSeeder
     ```
-8. Compile tailwind
-    ```sh
-    npm run dev
-    ```
+10. Setup tailwindcss in this project with this guide: [https://tailwindcss.com/docs/installation/framework-guides/laravel/vite](https://tailwindcss.com/docs/installation/framework-guides/laravel/vite)
 
-9. In another terminal, run the server
+11. In another terminal, run the server
     ```sh
     php artisan serve
     ```
