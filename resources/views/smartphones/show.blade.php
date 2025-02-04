@@ -11,7 +11,7 @@
         <p><strong>RAM:</strong> {{ $smartphone->ram }}</p>
         <p><strong>Stockage:</strong> {{ $smartphone->rom }}</p>
         <p><strong>Écran:</strong> {{ $smartphone->ecran }}</p>
-        <p><strong>Couleurs:</strong> {{ implode(', ', $smartphone->couleurs) }}</p>
+        <p><strong>Couleurs:</strong> {{ implode(', ', json_decode($smartphone->couleurs, true) ?? []) }}</p>
     </div>
     <a href="{{ route('smartphones.index') }}" class="block text-center mt-6 bg-gray-500 text-white px-4 py-2 rounded">Retour</a>
 </div>

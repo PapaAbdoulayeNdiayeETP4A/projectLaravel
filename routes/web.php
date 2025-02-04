@@ -16,4 +16,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('smartphones', SmartphoneController::class)->except(['index', 'show']); // Admin seulement
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
 require __DIR__.'/auth.php';
