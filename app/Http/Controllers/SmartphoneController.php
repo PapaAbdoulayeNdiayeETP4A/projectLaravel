@@ -41,11 +41,11 @@ class SmartphoneController extends Controller
             'ecran' => 'required|string',
             'couleurs' => 'required|array',
         ]);
-    
+
         if ($request->hasFile('photo')) {
             $validated['photo'] = $request->file('photo')->store('smartphones', 'public');
         }
-    
+
         Smartphone::create($validated);
         return redirect()->route('smartphones.index');
     }
@@ -72,6 +72,7 @@ class SmartphoneController extends Controller
     public function update(Request $request, string $id)
     {
         $smartphone = Smartphone::findOrFail($id);
+
         $validated = $request->validate([
             'nom' => 'required|string|max:255',
             'marque' => 'required|string|max:255',
@@ -81,17 +82,21 @@ class SmartphoneController extends Controller
             'ram' => 'required|string',
             'rom' => 'required|string',
             'ecran' => 'required|string',
-            'couleurs' => 'required|array',
+            'couleurs' => 'required|string', // Convertir les couleurs en une chaîne JSON
         ]);
-    
+
         if ($request->hasFile('photo')) {
-            Storage::disk('public')->delete($smartphone->photo); // Supprimer l'ancienne image
+            Storage::disk('public')->delete($smartphone->photo);
             $validated['photo'] = $request->file('photo')->store('smartphones', 'public');
         }
-    
+
+        $validated['couleurs'] = json_encode(explode(',', $validated['couleurs'])); // Transforme en JSON
+
         $smartphone->update($validated);
-        return redirect()->route('smartphones.index');
+
+        return redirect()->route('smartphones.index')->with('success', 'Smartphone mis à jour avec succès.');
     }
+
 
     /**
      * Remove the specified resource from storage.
