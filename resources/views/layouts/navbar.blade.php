@@ -6,17 +6,17 @@
         </a>
 
         <!-- Liens Desktop -->
-        <div class="hidden md:flex space-x-6">
-            <a href="{{ url('/') }}" class="hover:text-blue-300">Accueil</a>
+        <div class="hidden md:flex text-sm leading-none font-bold">
+            <a href="{{ url('/') }}" class="hover:bg-blue-600 text-white px-4 py-2 rounded">Accueil</a>
             
             @guest
-                <a href="{{ route('login') }}" class="hover:text-blue-300">Se connecter</a>
-                <a href="{{ route('register') }}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">S'inscrire</a>
+                <a href="{{ route('login') }}" class="hover:bg-blue-600 text-white px-4 py-2 rounded">Se connecter</a>
+                <a href="{{ route('register') }}" class=" hover:bg-blue-600 text-white px-4 py-2 rounded ">S'inscrire</a>
             @else
                 @if (Auth::user()->isAdmin())
-                    <a href="{{ route('smartphones.create') }}" class="hover:text-green-400">Ajouter un smartphone</a>
+                    <a href="{{ route('smartphones.create') }}" class="hover:text-green-400 px-4 py-2">Ajouter un smartphone</a>
                 @endif
-                <a href="#" class="hover:text-red-400" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
+                <a href="#" class="hover:text-red-400 px-4 py-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
             @endguest
         </div>
