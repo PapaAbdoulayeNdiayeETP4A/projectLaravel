@@ -5,7 +5,7 @@
     <h1 class="text-4xl font-bold text-center text-gray-800">{{ $smartphone->nom }}</h1>
 
     <div class="flex flex-col md:flex-row items-center gap-6 mt-6">
-        <img src="{{ asset('storage/' . $smartphone->photo) }}" alt="{{ $smartphone->nom }}" class="w-full md:w-1/2 h-80 object-cover rounded-md shadow-md">
+        <img src="{{ asset('storage/' . $smartphone->photo) }}" alt="{{ $smartphone->nom }}" class="h-80 object-cover rounded-md shadow-md">
 
         <div class="flex-1 space-y-4">
             <p><strong class="text-gray-700">Marque :</strong> {{ $smartphone->marque }}</p>
