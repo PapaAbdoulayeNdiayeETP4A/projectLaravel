@@ -1,102 +1,228 @@
-# Project Laravel
+# 📱 Documentation de l'Application Laravel 11
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+## 📝 Introduction
 
-## Introduction
-Welcome to the Project Laravel! This project is a web application built using the Laravel framework. It aims to provide a robust and scalable solution for [describe the purpose of your project].
+Cette application permet la gestion de smartphones avec **Laravel 11** et **Breeze** pour l'authentification. Elle propose :
 
-## Features
-- Feature 1: [Description of feature 1]
-- Feature 2: [Description of feature 2]
-- Feature 3: [Description of feature 3]
+- Une interface administrateur pour ajouter, modifier et supprimer des smartphones
+- Une interface utilisateur pour consulter la liste des smartphones
+- Une authentification sécurisée avec gestion des rôles
+- Une interface moderne avec **Tailwind CSS**
 
-## Installation
-To get a local copy up and running, follow these simple steps.
+---
 
-### Prerequisites
-- PHP >= 8.2
-- Composer
-- Node.js & npm
+## ⚙️ Installation & Configuration
 
-### Steps
-1. Clone the repository
-    ```sh
-    git clone git@github.com:PapaAbdoulayeNdiayeETP4A/projectLaravel.git
-    ```
-2. Navigate to the project directory
-    ```sh
-    cd projectLaravel
-    ```
-3. Install dependencies
-    ```sh
-    composer install
-    npm install
-    ```
+### 1️⃣ Cloner le projet
 
-4. Create a `.env` file
+```bash
+git clone git@github.com:PapaAbdoulayeNdiayeETP4A/projectLaravel.git
+cd projectLaravel
+```
 
-5. Copy the `.env.exemple` into `.env`
-    ```
-    cp .env.exemple .env
-    ```
+### 2️⃣ Installer les dépendances
 
-6. Change the `.env` file for database connection section like this
-    ```sh
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=smartphone_db
-    DB_USERNAME=root
-    DB_PASSWORD=
-    DB_COLLATION=utf8mb4_unicode_ci
-    ```
-7. Create the database on PhpMyAdmin
+```bash
+composer install
+npm install
+```
 
-8. Run migration
-    ```sh
-    php artisan migrate
-    ```
+### 3️⃣ Configurer l'environnement
 
-9. Seed the database with db.json file
-    ```sh
-    php artisan db:seed --class=SmartphoneSeeder
-    ```
-10. Setup tailwindcss in this project with this guide: [https://tailwindcss.com/docs/installation/framework-guides/laravel/vite](https://tailwindcss.com/docs/installation/framework-guides/laravel/vite)
+Copie le fichier `.env.example` en `.env` :
 
-11. In another terminal, run the server
-    ```sh
-    php artisan serve
-    ```
+```bash
+cp .env.example .env
+```
 
-## Usage
-Provide instructions and examples for using the project. Here are some commands you might find useful:
-- `php artisan serve`: Start the development server
-- `php artisan migrate`: Run the database migrations
-- `php artisan make:model ModelName`: Create a new Eloquent model
-- `php artisan db:seed --class=SmartphoneSeeder`: Seed the database using class specified
-- `npm install`: install node dependencies
+Génère une nouvelle clé d'application :
 
-## Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+```bash
+php artisan key:generate
+```
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Add all modified files for your next commit (`git add .`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### 4️⃣ Configurer la base de données et la créer avec PhpMyAdmin
 
-## License
-Distributed under the MIT License. See `LICENSE` for more information.
+Dans `.env`, configure **DB\_CONNECTION, DB\_DATABASE, DB\_USERNAME, DB\_PASSWORD** selon ton environnement.
+Puis, exécute :
 
-## Contact
-Papa Abdoulaye Ndiaye - [abdoulayendiaye10000@gmail.com](mailto:abdoulayendiaye10000@gmail.com)
+```bash
+php artisan migrate --seed
+```
 
-Project Link: [https://github.com/PapaAbdoulayeNdiayeETP4A/projectLaravel](https://github.com/PapaAbdoulayeNdiayeETP4A/projectLaravel)
+*(Cela créera les tables et un compte admin par défaut.)*
+
+### 5️⃣ Lancer l'application
+
+```bash
+php artisan serve
+npm run dev
+```
+
+---
+
+## 🔑 Authentification & Rôles
+
+L'application utilise **Laravel Breeze** pour la gestion des utilisateurs.
+
+### 🏷️ Rôles disponibles :
+
+- **Admin** : peut ajouter, modifier, supprimer et voir tous les smartphones
+- **Utilisateur** : peut uniquement consulter la liste des smartphones
+
+### Création d'un compte admin
+
+Un admin est créé automatiquement lors de l'exécution des **seeders**.
+Si tu veux en ajouter manuellement, mets `role = 'admin'` dans la table **users**.
+
+### ⚙️ Gestion des rôles dans `User.php`
+
+```php
+public function isAdmin(): bool {
+    return $this->role === 'admin';
+}
+```
+
+---
+
+## 📂 Architecture du Projet
+
+```plaintext
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── SmartphoneController.php
+│   │   ├── Middleware/
+│   │   │   ├── AdminMiddleware.php
+│   ├── Models/
+│   │   ├── Smartphone.php
+│   │   ├── User.php
+│   ├── Providers/
+│
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   │   ├── DatabaseSeeder.php
+│
+├── resources/
+│   ├── views/
+│   │   ├── layouts/
+│   │   ├── smartphones/
+│   │   │   ├── index.blade.php
+│   │   │   ├── show.blade.php
+│   │   │   ├── create.blade.php
+│   │   │   ├── edit.blade.php
+│
+├── routes/
+│   ├── web.php
+│
+├── public/
+│   ├── storage (lien vers storage/app/public)
+│
+├── storage/
+│   ├── app/
+│   │   ├── public/
+│
+├── tailwind.config.js
+├── package.json
+├── composer.json
+├── .env
+```
+
+---
+
+## 🛠️ Routes & Fonctionnalités
+
+### 🌍 Routes web (définies dans `routes/web.php`)
+
+```php
+Route::get('/', [SmartphoneController::class, 'index']); // Accueil
+Route::get('/smartphones/{id}', [SmartphoneController::class, 'show']); // Détails
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('smartphones', SmartphoneController::class)->except(['index', 'show']);
+});
+```
+
+### 🔒 Middleware Admin (`AdminMiddleware.php`)
+
+```php
+public function handle(Request $request, Closure $next) {
+    if (!Auth::check() || !Auth::user()->isAdmin()) {
+        return redirect('/')->with('error', 'Accès refusé.');
+    }
+    return $next($request);
+}
+```
+
+---
+
+## 🖥️ Frontend avec Tailwind CSS
+
+### 📜 Liste des Smartphones (`index.blade.php`)
+
+```blade
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    @foreach($smartphones as $smartphone)
+    <div class="bg-white p-6 shadow-md rounded-lg hover:shadow-lg">
+        <img src="{{ asset('storage/' . $smartphone->photo) }}" alt="{{ $smartphone->nom }}" class="w-full h-56 object-cover rounded-md">
+        <h2 class="text-xl font-semibold text-gray-900">{{ $smartphone->nom }}</h2>
+        <p class="text-gray-500">{{ $smartphone->marque }}</p>
+        <p class="text-lg font-semibold text-gray-700">${{ $smartphone->prix }}</p>
+        <a href="{{ route('smartphones.show', $smartphone->id) }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:brightness-90">Voir</a>
+    </div>
+    @endforeach
+</div>
+```
+
+---
+
+## 🚀 Déploiement
+
+### 1️⃣ Générer les assets Tailwind
+
+```bash
+npm run build
+```
+
+### 2️⃣ Configurer Laravel pour production
+
+```bash
+php artisan config:cache
+php artisan route:cache
+php artisan optimize
+```
+
+### 3️⃣ Déployer sur un serveur
+
+Si tu utilises **Apache** :
+
+```plaintext
+<VirtualHost *:80>
+    DocumentRoot "/var/www/html/public"
+    <Directory "/var/www/html">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+Et **Nginx** :
+
+```plaintext
+server {
+    listen 80;
+    server_name ton-domaine.com;
+    root /var/www/html/public;
+    index index.php index.html;
+}
+```
+
+---
+
+## 🎯 Conclusion
+
+Cette documentation couvre **toutes les fonctionnalités de l'application**, de l'installation au déploiement. 🚀
+
+Tu peux maintenant gérer et améliorer ton projet facilement ! 🎉
+
