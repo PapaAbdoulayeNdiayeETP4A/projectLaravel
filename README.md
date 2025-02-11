@@ -44,10 +44,16 @@ php artisan key:generate
 ### 4️⃣ Configurer la base de données et la créer avec PhpMyAdmin
 
 Dans `.env`, configure **DB\_CONNECTION, DB\_DATABASE, DB\_USERNAME, DB\_PASSWORD** selon ton environnement.
-Puis, exécute :
+Puis, exécute pour lancer la migration :
 
 ```bash
-php artisan migrate --seed
+php artisan migrate
+```
+
+Faire le seed de la base de donnes
+
+```bash
+php artisan db:seed --class=SmartphoneSeeder
 ```
 
 *(Cela créera les tables et un compte admin par défaut.)*
@@ -55,6 +61,7 @@ php artisan migrate --seed
 ### 5️⃣ Lancer l'application
 
 ```bash
+php artisan storage:link
 php artisan serve
 npm run dev
 ```
