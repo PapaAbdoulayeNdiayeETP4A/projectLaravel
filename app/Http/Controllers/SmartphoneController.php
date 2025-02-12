@@ -39,13 +39,14 @@ class SmartphoneController extends Controller
             'ram' => 'required|string',
             'rom' => 'required|string',
             'ecran' => 'required|string',
-            'couleurs' => 'required|array',
+            'couleurs' => 'required|string',
         ]);
 
         if ($request->hasFile('photo')) {
             $validated['photo'] = $request->file('photo')->store('smartphones', 'public');
         }
 
+        $validated['couleurs'] = json_encode(explode(',', $validated['couleurs']));
         Smartphone::create($validated);
         return redirect()->route('smartphones.index');
     }
